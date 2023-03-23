@@ -79,15 +79,15 @@
 
 
 
-<meta name="description" content="整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是方程组中一些物理量（放大系数、风速）的含义与平时的理解不太一样。 （1）非透视投影： 课件里推导三种投影的顶距$l$和放大系数$m$关于纬度$\phi$的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影">
+<meta name="description" content="整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是方程组中一些物理量（放大系数、风速）的含义与平时的理解不太一样。 （1）非透视投影： l课件里推导三种投影的顶距l和放大系数m关于纬度\phi的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Merc">
 <meta property="og:type" content="article">
 <meta property="og:title" content="地图投影tips：非透视投影、方程组的说明">
 <meta property="og:url" content="http://example.com/2023/03/23/%E5%9C%B0%E5%9B%BE%E6%8A%95%E5%BD%B1tips%EF%BC%9A%E9%9D%9E%E9%80%8F%E8%A7%86%E6%8A%95%E5%BD%B1%E3%80%81%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E8%AF%B4%E6%98%8E/index.html">
 <meta property="og:site_name" content="Porloname">
-<meta property="og:description" content="整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是方程组中一些物理量（放大系数、风速）的含义与平时的理解不太一样。 （1）非透视投影： 课件里推导三种投影的顶距$l$和放大系数$m$关于纬度$\phi$的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影">
+<meta property="og:description" content="整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是方程组中一些物理量（放大系数、风速）的含义与平时的理解不太一样。 （1）非透视投影： l课件里推导三种投影的顶距l和放大系数m关于纬度\phi的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Merc">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-23T11:54:19.000Z">
-<meta property="article:modified_time" content="2023-03-23T12:29:21.823Z">
+<meta property="article:modified_time" content="2023-03-23T12:38:25.471Z">
 <meta property="article:author" content="Havw">
 <meta name="twitter:card" content="summary">
 
@@ -305,7 +305,7 @@
       
         <p>整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是方程组中一些物理量（放大系数、风速）的含义与平时的理解不太一样。</p>
 <p><strong>（1）非透视投影：</strong></p>
-<p>课件里推导三种投影的顶距$l$和放大系数$m$关于纬度$\phi$的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视投影，它们的顶距$l$、放大系数$m$与纬度$\phi$的关系是由正形约束条件推导而来的。</p>
+<script type="math/tex; mode=display">l</script><p>课件里推导三种投影的顶距<script type="math/tex">l</script>和放大系数<script type="math/tex">m</script>关于纬度<script type="math/tex">\phi</script>的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视投影，它们的顶距$l$、放大系数$m$与纬度$\phi$的关系是由正形约束条件推导而来的。</p>
 <p>那么，推导时作图有什么作用呢？它的作用就是限定了$d\lambda$与$d\lambda_e$之间的关系（即二者之比为圆锥常数$K$）。这张图只是帮助我们理解一定的$d\lambda$（$K\cdotd\lambda_e$）下，不同坐标系中微元的大小。一定不可以理解为图中的$l$可以按照几何关系对应到球坐标系下。</p>
 
       
