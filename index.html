@@ -315,9 +315,9 @@
         
           
             <p>整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是地图投影方程组中一些物理量（放大系数、风速）的含义。</p>
-<h2 id="（1）非透视投影："><a href="#（1）非透视投影：" class="headerlink" title="（1）非透视投影："></a>（1）非透视投影：</h2><p>课件里推导三种投影的顶距<script type="math/tex">l</script>和放大系数<script type="math/tex">m</script>关于纬度<script type="math/tex">\phi</script>的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视投影，它们的顶距$l$、放大系数$m$与纬度$\phi$的关系是由正形约束条件推导而来的。</p>
+<h2 id="非透视投影："><a href="#非透视投影：" class="headerlink" title="非透视投影："></a>非透视投影：</h2><p>课件里推导三种投影的顶距<script type="math/tex">l</script>和放大系数<script type="math/tex">m</script>关于纬度<script type="math/tex">\phi</script>的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视投影，它们的顶距$l$、放大系数$m$与纬度$\phi$的关系是由正形约束条件推导而来的。</p>
 <p>那么，推导时作图有什么作用呢？它的作用就是限定了$d\lambda$与$d\lambda_e$之间的关系（即二者之比为圆锥常数$K$）。这张图只是帮助我们理解一定的$d\lambda$（$Kd\lambda_e$）下，不同坐标系中微元的大小。不能理解为$l$可以按照图中的几何关系对应到球坐标系下。</p>
-<h2 id="（2）地图投影方程组中物理量的说明"><a href="#（2）地图投影方程组中物理量的说明" class="headerlink" title="（2）地图投影方程组中物理量的说明"></a>（2）地图投影方程组中物理量的说明</h2><p><strong>1. 放大系数</strong> </p>
+<h2 id="地图投影方程组中物理量的说明"><a href="#地图投影方程组中物理量的说明" class="headerlink" title="地图投影方程组中物理量的说明"></a>地图投影方程组中物理量的说明</h2><p><strong>1. 放大系数</strong> </p>
 <p>课件中给出的，在地图投影坐标系下的X、Y方向的放大系数$m$、$n$，并不是我们在上一部分推导的（纬向、经向）放大系数。对于Mercator投影，由于X、Y方向刚好对应着纬向和经向，所以二者相等；但是在圆锥投影中，X、Y方向的放大系数$m$、$n$则需要我们推导。基本的思路是：利用放大系数的定义:</p>
 <script type="math/tex; mode=display">m = \frac{dX}{dl_x}</script><p>其中，$dl_x$是$dX$对应在地球上所移动的距离。我们可以把$X$写成顶距$l$和$\lambda$的函数，而$l$和$\lambda$则是地球坐标系下$\phi$和$\lambda_e$的函数。因此可以得到：</p>
 <script type="math/tex; mode=display">dX = fx(\phi,\lambda_e)d\phi+gx(\phi,\lambda_e)d\lambda_e</script><p>同理：</p>
