@@ -87,7 +87,7 @@
 <meta property="og:description" content="在第三章（差分格式）中，我们广泛运用了向平流方程中代入形式解的方法。无论是冯·诺伊曼法判定线性稳定性，还是后面求差分方程的解（以导出计算解、频率&#x2F;相速度误差），都是以代入形式解为基础的。这一方法的本质就是差分方程的特征根法（类似于在常微分方程中学习到的特征根法）。 考虑一个线性平流方程：  \frac{\partial u}{\partial t} + c \frac{\partial u}{\p">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-26T06:15:43.000Z">
-<meta property="article:modified_time" content="2023-03-26T06:39:09.963Z">
+<meta property="article:modified_time" content="2023-03-26T06:44:10.356Z">
 <meta property="article:author" content="Endless">
 <meta property="article:tag" content="数值天气预报">
 <meta name="twitter:card" content="summary">
@@ -321,12 +321,12 @@
 <script type="math/tex; mode=display">
 u_{m}^{n+1} - u_{m}^{n-1} + \mu (u_{m+1}^{n} - u_{m-1}^{n}) = 0,
 \; 
-\mu = c\frac{\Delta t}{\Delta x}</script><p>这是一个二阶常系数线性差分方程，所以它的通解是该方程的两个线性无关的特解的线性组合。</p>
+\mu = c\frac{\Delta t}{\Delta x}</script><p>这是一个<strong>二阶常系数线性差分方程</strong>，所以它的通解是该方程的两个线性无关的特解的线性组合。</p>
 <p>通过方程形式可以猜测它具有波形解，因此，代入解：</p>
 <script type="math/tex; mode=display">
 u_{m}^{n}=B^{n}e^{ikm\Delta x}</script><p>化简即可得到差分方程的特征方程：</p>
 <script type="math/tex; mode=display">
-B - B^{-1} + 2i\mu sink\Delta x</script><p>这是一个一元二次方程，存在两个根。根据这个方程就可以进行线性稳定性讨论和计算解的导出了。</p>
+B - B^{-1} + 2i\mu sink\Delta x = 0</script><p>这是一个关于B（时间项）的一元二次方程，存在两个根。根据这个方程，我们进行线性稳定性讨论（其实应该用增幅因子G的方程讨论稳定性，但思路与这里一样）和计算解的导出（线性稳定的情况下，B的两个解对应物理解和计算解）了。</p>
 
       
     </div>
