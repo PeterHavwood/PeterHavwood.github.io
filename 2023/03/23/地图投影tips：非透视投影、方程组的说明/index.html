@@ -87,7 +87,7 @@
 <meta property="og:description" content="整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是地图投影方程组中一些物理量（放大系数、风速）的含义。 非透视投影：课件里推导三种投影的顶距l和放大系数m关于纬度\phi的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-03-23T11:54:19.000Z">
-<meta property="article:modified_time" content="2023-03-23T13:54:54.920Z">
+<meta property="article:modified_time" content="2023-03-23T14:08:17.963Z">
 <meta property="article:author" content="Endless">
 <meta property="article:tag" content="数值天气预报">
 <meta name="twitter:card" content="summary">
@@ -316,12 +316,12 @@
       
         <p>整理第二章（地图投影）笔记的时候发现一些基础的问题在课件中没有仔细提及，如果略去的话可能会影响这部分的理解。一个是非透视投影的问题，另外一个则是地图投影方程组中一些物理量（放大系数、风速）的含义。</p>
 <h2 id="非透视投影："><a href="#非透视投影：" class="headerlink" title="非透视投影："></a>非透视投影：</h2><p>课件里推导三种投影的顶距<script type="math/tex">l</script>和放大系数<script type="math/tex">m</script>关于纬度<script type="math/tex">\phi</script>的函数表达式时，通过作图进行了辅助说明。这会给人一种几何推导的感觉。但是极射赤面投影、Lambert投影和Mercator投影都是非透视投影，它们的顶距$l$、放大系数$m$与纬度$\phi$的关系是由正形约束条件推导而来的。</p>
-<p>那么，推导时作图有什么作用呢？它的作用就是限定了$d\lambda$与$d\lambda_e$之间的关系（即二者之比为圆锥常数$K$）。这张图只是帮助我们理解一定的$d\lambda$（$Kd\lambda_e$）下，不同坐标系中微元的大小。不能理解为$l$可以按照图中的几何关系对应到球坐标系下。</p>
+<p>那么，推导时作图有什么作用呢？它的作用就是限定了$d\lambda$与$d\lambda_e$之间的关系（即二者之比为圆锥常数$K$）。这张图只是帮助我们理解一定的$d\lambda$（$Kd\lambda_e$）下，不同坐标系中微元的大小。不能理解为“$l$可以按照图中的几何关系对应到球坐标系下”。</p>
 <h2 id="地图投影方程组中物理量的说明"><a href="#地图投影方程组中物理量的说明" class="headerlink" title="地图投影方程组中物理量的说明"></a>地图投影方程组中物理量的说明</h2><p><strong>1. 放大系数</strong> </p>
 <p>课件中给出的，在地图投影坐标系下的X、Y方向的放大系数$m$、$n$，并不是我们在上一部分推导的（纬向、经向）放大系数。对于Mercator投影，由于X、Y方向刚好对应着纬向和经向，所以二者相等；但是在圆锥投影中，X、Y方向的放大系数$m$、$n$则需要我们推导。基本的思路是：利用放大系数的定义:</p>
 <script type="math/tex; mode=display">m = \frac{dX}{dl_x}</script><p>其中，$dl_x$是$dX$对应在地球上所移动的距离。我们可以把$X$写成顶距$l$和$\lambda$的函数，而$l$和$\lambda$则是地球坐标系下$\phi$和$\lambda_e$的函数。因此可以得到：</p>
-<script type="math/tex; mode=display">dX = fx(\phi,\lambda_e)d\phi+gx(\phi,\lambda_e)d\lambda_e</script><p>同理：</p>
-<script type="math/tex; mode=display">dY = fy(\phi,\lambda_e)d\phi+gy(\phi,\lambda_e)d\lambda_e</script><p>而$dl_x$显然是$d\phi$和$d\lambda_e$的函数（上述三个函数关系式具体形式略去）。</p>
+<script type="math/tex; mode=display">dX = f_x(\phi,\lambda_e)d\phi+g_x(\phi,\lambda_e)d\lambda_e</script><p>同理：</p>
+<script type="math/tex; mode=display">dY = f_y(\phi,\lambda_e)d\phi+g_y(\phi,\lambda_e)d\lambda_e</script><p>而$dl_x$显然是$d\phi$和$d\lambda_e$的函数（上述三个函数关系式具体形式略去）。</p>
 <p>当计算X方向上放大系数$m$时，$dY=0$，则可以得到$d\phi$和$d\lambda_e$的关系，由此我们可以解得$m$。</p>
 <p><strong>2.风速</strong></p>
 <p>课件里直接把球坐标系下的风速线性变换到地球投影坐标系下，我一开始并不能理解。结合实际应用我才想明白，这里的风速并不是通过不同坐标系下位矢对时间求导计算得来的，而是实际我们观测到的各点的风速$(u_e,v_e,w_e)$。因此，把风速投影到映射面上的时候不需要复杂的变换，各点的风速就是其观测值，u依然沿纬向，v依然沿经向。而课件中的风速的线性变换，不过是把观测的风速投影到投影坐标系的X、Y轴上罢了。在后面的计算中，我们也只是把变换后的$(u,v,w)$当作三个标量处理。</p>
